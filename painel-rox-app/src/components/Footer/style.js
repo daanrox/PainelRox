@@ -31,6 +31,12 @@ export const StyleFooter = styled.footer`
 
     .footerContent>img{
         width: 5rem;
+        cursor: pointer;
+        transition: transform 0.5s;
+    }
+
+    .footerContent>img:hover{
+        transform: scale(1.1);
     }
 
 `

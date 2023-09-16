@@ -9,7 +9,9 @@ export const Footer = () => {
                 <div className="footerContainer">
                     <div className='footerContent'>
                         <h1 className='poweredBy'>Powered by</h1>
-                        <img src={logoDaanrox} alt='Daanrox' />
+                        <img onClick={ ()=>{
+                             window.open('https://wa.me/5531992812273', '_blank');
+                        }} src={logoDaanrox} alt='Daanrox' />
                     </div>
                 </div>
 

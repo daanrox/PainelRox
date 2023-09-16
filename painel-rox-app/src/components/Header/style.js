@@ -16,7 +16,7 @@ export const StyleHeaderContainer = styled.div`
     align-items: center;
 
     img{
-        max-width: 15rem;
+        max-width: 20rem;
         width: 50%;
     }
 `

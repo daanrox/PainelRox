@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Title1 } from "../../styles/tipography";
 import { StylePainel, StylePainelContainer, StylePainelDescription } from "./style";
 import { Button } from "../Button/Button";
 import { baseUrl } from "../../../services/api";
+import { PainelContext } from "../../providers/PainelContext";
 
 export const Painel = ({ services }) => {
     const [selectedPrice, setSelectedPrice] = useState(null);
@@ -12,6 +13,8 @@ export const Painel = ({ services }) => {
     const [selectedService, setSelectedService] = useState('');
     const [minQuantity, setMinQuantity] = useState("");
     const [maxQuantity, setMaxQuantity] = useState("");
+    const {modalIsOpen, setModalIsOpen, modalAlert, setModalAlert} = useContext(PainelContext)
+
 
     useEffect(() => {
         setTotalValue(quantity * (selectedPrice / 1000))
@@ -39,6 +42,9 @@ export const Painel = ({ services }) => {
 
         const url = `${baseUrl}?key=${apiKey}&action=${action}&service=${serviceId}&link=${link}&quantity=${quantityValue}`;
         console.log('URL:', url);
+
+        setModalIsOpen(true)
+        setModalAlert(`Pedido Adicionado com Sucesso!`)
     };
 
     return (

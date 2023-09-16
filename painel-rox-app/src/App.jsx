@@ -7,26 +7,42 @@ import { PainelContext } from './providers/PainelContext'
 import { services } from '../services/database'
 import { Dashboard } from './components/Dashboard/Dashboard'
 import { Footer } from './components/Footer/Footer'
+import Modal from 'react-modal'
+import { ModalStyles } from './styles/modalStyles'
+import { ModalPainel } from './components/Modal/ModalPainel'
+import { Home } from './components/Home/Home'
+
+Modal.setAppElement('#root')
+
 
 function App() {
 
-  const {isSession} = useContext(PainelContext)
+  const { isSession, modalIsOpen, setModalIsOpen, closeModal } = useContext(PainelContext)
+
 
   return (
     <>
-    <GlobalStyle />
-     <Header/>
-     {isSession ? <>
-    <Dashboard/>
-    <Painel services={services}/>
-     
-     </>
-     : 
-     <Title1>Faça Login</Title1>}
-  
-      <Footer/>
+      <GlobalStyle />
+      <ModalStyles/>
+      <Header />
+      {isSession ? <>
+        <Dashboard />
+        <Painel services={services} />
+      </>
+        :
+        <>
+        <Title1>Faça Login</Title1>
+        <Home/>
+
+        </>
+        }
+        
+      <Footer />
+      <Modal isOpen={modalIsOpen} onRequestClose={closeModal} contentLabel='' overlayClassName='modal-overlay' className='modal-content'>
+        <ModalPainel/>
+      </Modal>
     </>
-  
+
   )
 }
 
