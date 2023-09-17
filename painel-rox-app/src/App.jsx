@@ -31,7 +31,6 @@ function App() {
       </>
         :
         <>
-        <Title1>Faça Login</Title1>
         <Home/>
 
         </>
