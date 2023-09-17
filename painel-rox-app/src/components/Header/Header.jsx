@@ -6,6 +6,8 @@ import { PainelContext } from "../../providers/PainelContext"
 
 export const Header = () =>{
 
+    const {modalLoginIsOpen, setModalLoginIsOpen} = useContext(PainelContext)
+
     const { isSession, setIsSession } = useContext(PainelContext)
 
 
@@ -13,7 +15,7 @@ export const Header = () =>{
         if(isSession){
             setIsSession(false)
         } else{
-            setIsSession(true)
+            setModalLoginIsOpen(true)
         }
     }
     return (

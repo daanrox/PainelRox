@@ -11,13 +11,14 @@ import Modal from 'react-modal'
 import { ModalStyles } from './styles/modalStyles'
 import { ModalPainel } from './components/Modal/ModalPainel'
 import { Home } from './components/Home/Home'
+import { ModalLogin } from './components/Modal/ModalLogin'
 
 Modal.setAppElement('#root')
 
 
 function App() {
 
-  const { isSession, modalIsOpen, setModalIsOpen, closeModal } = useContext(PainelContext)
+  const { isSession, modalIsOpen, setModalIsOpen, closeModal, modalLoginIsOpen } = useContext(PainelContext)
 
 
   return (
@@ -39,6 +40,9 @@ function App() {
       <Footer />
       <Modal isOpen={modalIsOpen} onRequestClose={closeModal} contentLabel='' overlayClassName='modal-overlay' className='modal-content'>
         <ModalPainel/>
+      </Modal>
+      <Modal isOpen={modalLoginIsOpen} onRequestClose={closeModal} contentLabel='' overlayClassName='modal-overlay' className='modal-content'>
+        <ModalLogin/>
       </Modal>
     </>
 

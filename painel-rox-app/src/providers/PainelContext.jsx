@@ -8,6 +8,7 @@ export const PainelProvider = ({children}) =>{
 const [isSession, setIsSession ] = useState(true)
 const [modalIsOpen, setModalIsOpen] = useState(false)
 const [modalAlert, setModalAlert] = useState('')
+const [modalLoginIsOpen, setModalLoginIsOpen] = useState(false)
 
 
 const closeModal = () =>{
@@ -15,7 +16,7 @@ const closeModal = () =>{
 }
 
     return <PainelContext.Provider
-        value={{isSession, setIsSession,modalIsOpen, setModalIsOpen, modalAlert, setModalAlert,closeModal }}
+        value={{isSession, setIsSession,modalIsOpen,modalLoginIsOpen, setModalLoginIsOpen, setModalIsOpen, modalAlert, setModalAlert,closeModal }}
       >
         {children}
       </PainelContext.Provider>

@@ -1,9 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { StyledHome } from './style';
 import daanroxAvatar from '../../assets/avatar_rox-smm.png';
 import { Button } from '../Button/Button';
+import { PainelContext } from '../../providers/PainelContext';
 
 export const Home = () => {
+
+    const {modalLoginIsOpen, setModalLoginIsOpen} = useContext(PainelContext)
+
+
     const [typedText, setTypedText] = useState('');
     const originalText = 'Seus pedidos serão iniciados quase instantaneamente  ';
 
@@ -35,7 +40,9 @@ export const Home = () => {
                         {typedText}
                         <span className="cursor" style={{ borderColor: 'var(--color-primary)' }}></span>
                     </p>
-                    <Button text='Faça o Login'/>
+                    <Button onClick={ () => {
+                        setModalLoginIsOpen(true)
+                    }} text='Faça o Login'/>
                 </div>
                 <div>
                     <img className='homeAvatar' src={daanroxAvatar} alt='Avatar Rox Smm' />
