@@ -5,7 +5,7 @@ export const PainelContext = createContext({});
 
 export const PainelProvider = ({children}) =>{
 
-const [isSession, setIsSession ] = useState(true)
+const [isSession, setIsSession ] = useState(false)
 const [modalIsOpen, setModalIsOpen] = useState(false)
 const [modalAlert, setModalAlert] = useState('')
 const [modalLoginIsOpen, setModalLoginIsOpen] = useState(false)

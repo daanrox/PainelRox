@@ -7,6 +7,7 @@ export const StyleFooter = styled.footer`
     position: fixed;
     bottom: 0; 
     width: 100%; 
+    background-color: var(--color-secundary);
 
    .footerContainer{
         width: 80%;

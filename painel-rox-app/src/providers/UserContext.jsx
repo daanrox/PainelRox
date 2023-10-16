@@ -5,10 +5,13 @@ export const UserContext = createContext({});
 
 export const UserProvider = ({children}) =>{
 
-const [userName, setUserName ] = useState(`Daanrox`)
+const [userData, setUserData] = useState(null)
+const [userName, setUserName ] = useState(``)
+const [balance, setBalance] = useState(0.00)
+const [spent, setSpent] = useState(0.00)
 
     return <UserContext.Provider
-        value={{userName, setUserName}}
+        value={{userName, setUserName, balance, setBalance, userData, setUserData, spent, setSpent}}
       >
         {children}
       </UserContext.Provider>
